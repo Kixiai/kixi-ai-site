@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://kixiai.netlify.app/sitemap.xml
