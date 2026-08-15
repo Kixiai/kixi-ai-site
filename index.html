@@ -430,8 +430,8 @@
       timer=setInterval(()=>{ idx=(idx+1)%languages[currentLang].length; show(idx); },3200); }
 
     const qWords = {
-      pt: [ {n:"a língua",v:"se torna"}, {n:"o conhecimento",v:"se torna"}, {n:"os agentes",v:"se tornam"}, {n:"as decisões",v:"se tornam"}, {n:"as organizações",v:"se tornam"}, {n:"África",v:"se torna"} ],
-      en: [ {n:"language",v:"becomes"}, {n:"knowledge",v:"becomes"}, {n:"agents",v:"become"}, {n:"decisions",v:"become"}, {n:"organizations",v:"become"}, {n:"Africa",v:"becomes"} ],
+      pt: [ {n:"a língua",v:"se torna"}, {n:"o conhecimento",v:"se torna"}, {n:"os dados",v:"se tornam"}, {n:"o contexto",v:"se torna"}, {n:"	a confiança",v:"se torna"}, {n:"África",v:"se torna"} ],
+      en: [ {n:"language",v:"becomes"}, {n:"knowledge",v:"becomes"}, {n:"data",v:"becomes"}, {n:"context",v:"becomes"}, {n:"trust",v:"becomes"}, {n:"Africa",v:"becomes"} ],
     };
     const qCycle = document.getElementById('qCycle');
     const qMeasure = document.getElementById('qMeasure');
@@ -450,7 +450,7 @@
     function startQ(){ clearInterval(qTimer); qIdx=0; showQ(0); qTimer=setInterval(()=>{ qIdx=(qIdx+1)%qWords[currentLang].length; showQ(qIdx); },2000); }
 
     window.onLangChange = function(lang){ currentLang = lang; start(); startQ(); };
-    start(); startQ();
+    document.fonts.ready.then(() => { start(); startQ(); });
   })();
 </script>
 
