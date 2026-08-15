@@ -457,7 +457,7 @@
 
 <script>
   // Simple static-text i18n: elements with data-en/data-pt swap on toggle.
-  const state = { lang: localStorage.getItem('kixiLang') || 'pt' };
+  const state = { lang: 'pt' };
   function applyStaticLang(lang){
     document.querySelectorAll('[data-en][data-pt]').forEach(el => {
       el.innerHTML = lang === 'pt' ? el.dataset.pt : el.dataset.en;
@@ -466,7 +466,6 @@
     document.documentElement.lang = lang;
     if (window.onLangChange) window.onLangChange(lang);
     state.lang = lang;
-localStorage.setItem('kixiLang', lang);
   }
   document.getElementById('langToggle').addEventListener('click', () => applyStaticLang(state.lang === 'pt' ? 'en' : 'pt'));
 
@@ -476,7 +475,7 @@ localStorage.setItem('kixiLang', lang);
     menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
   }
-  applyStaticLang(state.lang);
+  applyStaticLang('pt');
 </script>
 
 </body>
