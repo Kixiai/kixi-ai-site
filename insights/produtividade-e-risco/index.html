@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="hosting-provider" content="Netlify">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIXI AI — A IA não é apenas uma questão de produtividade. É também uma questão de risco.</title>
+<meta name="google-site-verification" content="QQ0wSvUH0h9zwqFZVyT1Ly6pN6fdZt5QFZwgn7w7Awk" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#080D16">
+<meta name="description" content="Automatizar é a parte fácil. Governar o que se automatiza é o que decide o futuro da empresa. Um Executive Brief da KIXI AI sobre IA e risco.">
+<link rel="canonical" href="https://kixiai.netlify.app/insights/produtividade-e-risco/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIXI AI">
+<meta property="og:title" content="KIXI AI — A IA não é apenas uma questão de produtividade. É também uma questão de risco.">
+<meta property="og:description" content="Automatizar é a parte fácil. Governar o que se automatiza é o que decide o futuro da empresa. Um Executive Brief da KIXI AI sobre IA e risco.">
+<meta property="og:image" content="https://kixiai.netlify.app/og-image-pt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kixiai.netlify.app/insights/produtividade-e-risco/">
+<meta property="og:locale" content="pt_PT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KIXI AI — A IA não é apenas uma questão de produtividade. É também uma questão de risco.">
+<meta name="twitter:description" content="Automatizar é a parte fácil. Governar o que se automatiza é o que decide o futuro da empresa. Um Executive Brief da KIXI AI sobre IA e risco.">
+<meta name="twitter:image" content="https://kixiai.netlify.app/og-image-pt.png">
+<style>
+
+  :root{
+    --navy-950:#080D16; --navy-900:#0B1420; --navy-800:#131F32; --navy-750:#182640;
+    --line:#28374F; --line-soft:#1B2740;
+    --paper:#F5F1E7; --paper-dim:#EAE4D4;
+    --ink-on-paper:#1C1A15; --ink-on-paper-dim:#6B6355;
+    --ink:#E9E6DC; --ink-dim:#94A0B4;
+    --gold:#C9A24A; --gold-light:#E8CD84; --gold-dim:#7A6631;
+    --black:#050709;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--navy-950); color:var(--ink); font-family:'IBM Plex Sans', sans-serif; overflow-x:hidden; }
+  a{ color:inherit; }
+  ::selection{ background:var(--gold); color:var(--navy-950); }
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap{ max-width:1240px; margin:0 auto; padding-left:56px; padding-right:56px; }
+  @media (max-width:760px){ .wrap{ padding-left:24px; padding-right:24px; } }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; gap:12px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:24px; height:1px; background:var(--gold); }
+  .eyebrow.on-paper{ color:var(--gold-dim); }
+  .eyebrow.on-paper::before{ background:var(--gold-dim); }
+
+  /* ---------- NAV ---------- */
+  #nav{
+    position:sticky; top:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 56px; background:rgba(8,13,22,0.9); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .logo{ display:flex; align-items:center; gap:11px; text-decoration:none; transition:opacity .2s ease; }
+  .logo:hover{ opacity:0.8; }
+  .logo-mark{ width:28px; height:28px; flex-shrink:0; }
+  .logo-wordmark{ font-family:'Fraunces', serif; font-weight:600; font-size:16.5px; color:var(--paper); }
+  .logo-wordmark span{ color:var(--gold); font-style:italic; font-weight:500; }
+  .nav-links{ display:flex; gap:30px; list-style:none; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-dim); }
+  .nav-links a{ text-decoration:none; cursor:pointer; transition:color .25s ease; position:relative; padding-bottom:4px;}
+  .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .25s ease; }
+  .nav-links a:hover{ color:var(--paper); }
+  .nav-links a.current{ color:var(--gold); }
+  .nav-links a.current::after{ width:100%; }
+  .nav-right{ display:flex; align-items:center; gap:16px; }
+  .lang-toggle{ border:1px solid var(--line); border-radius:20px; padding:6px 14px; background:none; cursor:pointer;
+    color:var(--ink-dim); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.05em;
+    display:flex; align-items:center; gap:6px; }
+  .lang-toggle span{ opacity:0.5; transition:all .2s ease; }
+  .lang-toggle span.on{ color:var(--gold); opacity:1; }
+  .nav-cta{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:13px; color:var(--navy-950);
+    background:linear-gradient(100deg, var(--gold-light), var(--gold)); padding:9px 18px; border-radius:20px;
+    text-decoration:none; transition:transform .2s ease; }
+  .nav-cta:hover{ transform:translateY(-1px); }
+  @media (max-width:560px){ .nav-cta{ display:none; } }
+  .menu-btn{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .menu-btn span{ width:20px; height:1px; background:var(--paper); display:block; }
+  @media (max-width:920px){ #nav{ padding:18px 24px; } .nav-links{ display:none; } .menu-btn{ display:flex; } }
+
+  #mobile-menu{ position:fixed; inset:0; z-index:99; background:var(--navy-950); display:flex; flex-direction:column;
+    justify-content:center; gap:26px; padding:56px; transform:translateY(-100%); transition:transform .45s cubic-bezier(.22,.61,.36,1); }
+  #mobile-menu.open{ transform:translateY(0); }
+  #mobile-menu a{ font-family:'Fraunces', serif; font-size:28px; color:var(--paper); text-decoration:none; }
+  #mobile-menu a.current{ color:var(--gold); }
+  #mobile-menu a span{ color:var(--gold-dim); font-family:'IBM Plex Mono', monospace; font-size:12px; margin-right:12px; }
+
+  .btn-primary{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:14px; color:var(--navy-950);
+    background:linear-gradient(100deg, var(--gold-light), var(--gold)); padding:14px 28px; border-radius:2px;
+    text-decoration:none; display:inline-block; transition: transform .25s ease, box-shadow .25s ease; border:none; cursor:pointer; }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,162,74,0.25); }
+  .btn-secondary{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:14px; color:var(--paper);
+    padding:14px 4px; text-decoration:none; border-bottom:1px solid var(--line); display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .25s ease, color .25s ease; }
+  .btn-secondary:hover{ border-color:var(--gold); color:var(--gold-light); }
+  .btn-secondary.on-paper{ color:var(--ink-on-paper); border-color:#DCD5C3; }
+  .btn-secondary.on-paper:hover{ border-color:var(--gold-dim); color:var(--gold-dim); }
+
+  .chip{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-light);
+    border:1px solid var(--line); border-radius:20px; padding:6px 12px; display:inline-block; }
+  .chip.on-paper{ color:var(--gold-dim); border-color:#DCD5C3; }
+
+  /* ---------- PAGE HERO (subpages) ---------- */
+  .page-hero{ padding:80px 56px 70px; border-bottom:1px solid var(--line-soft); position:relative; overflow:hidden;
+    background: radial-gradient(ellipse 900px 500px at 90% 0%, rgba(201,162,74,0.07), transparent 60%), linear-gradient(180deg, var(--navy-950), var(--navy-900)); }
+  .page-hero .kicker{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; color:var(--gold-dim); margin-bottom:8px; }
+  .page-hero h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(34px,5vw,58px); line-height:1.12; color:var(--paper); max-width:16ch; }
+  .page-hero h1 em{ font-style:italic; font-weight:500; background:linear-gradient(100deg, var(--gold-light), var(--gold) 60%);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .page-hero .sub{ margin-top:22px; font-size:16.5px; line-height:1.7; color:var(--ink-dim); max-width:50ch; }
+  @media (max-width:700px){ .page-hero{ padding:56px 24px 44px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--navy-950); padding:56px; border-top:1px solid var(--line-soft); }
+  .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; max-width:1240px; margin:0 auto; }
+  .footer-tagline{ font-family:'Fraunces', serif; font-style:italic; font-size:16px; color:var(--ink-dim); max-width:32ch; margin-top:14px; }
+  .footer-links{ display:flex; gap:50px; flex-wrap:wrap; }
+  .footer-col{ display:flex; flex-direction:column; gap:11px; }
+  .footer-col span.head{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:4px; }
+  .footer-col a{ font-size:13.5px; color:var(--ink-dim); text-decoration:none; }
+  .footer-col a:hover{ color:var(--paper); }
+  .footer-bottom{ max-width:1240px; margin:50px auto 0; padding-top:26px; border-top:1px solid var(--line-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em; }
+
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .fade-up{ animation: fadeUp .7s ease forwards; }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; } html{ scroll-behavior:auto; } }
+
+
+  section.body-section{ background:var(--paper); color:var(--ink-on-paper); padding:60px 56px 0; }
+  .meta-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em;
+    color:var(--ink-on-paper-dim); text-transform:uppercase; margin-bottom:28px; }
+  .meta-row .tag{ color:var(--gold-dim); font-weight:500; }
+  .meta-row .dot{ width:3px; height:3px; border-radius:50%; background:var(--ink-on-paper-dim); }
+  .article-hero h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(32px,5vw,54px); line-height:1.15; max-width:18ch; color:var(--ink-on-paper); }
+  .article-hero .dek{ margin-top:24px; font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-size:clamp(18px,2vw,22px); line-height:1.5; color:var(--gold-dim); max-width:38ch; }
+  .article-hero{ padding-bottom:56px; border-bottom:1px solid #DCD5C3; margin-bottom:60px; }
+
+  .body-grid{ display:grid; grid-template-columns: 1fr 640px 1fr; }
+  .body-grid > *{ grid-column:2; }
+  @media (max-width:1000px){ .body-grid{ grid-template-columns:1fr; } .body-grid > *{ grid-column:1; } }
+  .lede{ font-size:19px; line-height:1.75; color:var(--ink-on-paper); margin-bottom:36px; }
+  .p{ font-size:16.5px; line-height:1.85; color:#3A362E; margin-bottom:26px; }
+  .capability-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#DCD5C3; border:1px solid #DCD5C3; margin: 44px 0 48px; }
+  .cap-card{ background:var(--paper); padding:26px 24px; display:flex; gap:16px; align-items:flex-start; }
+  .cap-icon{ width:22px; height:22px; color:var(--gold-dim); flex-shrink:0; margin-top:2px; }
+  .cap-card h4{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; margin-bottom:4px; }
+  .cap-card p{ font-size:13px; color:var(--ink-on-paper-dim); line-height:1.5; }
+  @media (max-width:640px){ .capability-grid{ grid-template-columns:1fr; } }
+  blockquote{ margin: 48px 0; padding: 6px 0 6px 28px; border-left:2px solid var(--gold); font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+    font-size:clamp(21px,2.6vw,27px); line-height:1.5; color:var(--ink-on-paper); }
+  .close-note{ background:var(--navy-950); color:var(--ink); padding:44px 40px; margin:56px 0 90px; border-radius:2px; }
+  .close-note .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .close-note .eyebrow::before{ content:''; width:20px; height:1px; background:var(--gold); }
+  .close-note p{ font-size:15.5px; line-height:1.7; color:var(--ink-dim); margin-bottom:20px; }
+  .close-note strong{ color:var(--paper); }
+
+  .related{ background:var(--paper-dim); padding:70px 56px 100px; }
+  .related h3{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:30px; }
+  .related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#DCD5C3; border:1px solid #DCD5C3; max-width:1128px; margin:0 auto; }
+  .related-card{ background:var(--paper-dim); padding:30px 26px; text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:background .25s ease; }
+  .related-card:hover{ background:#F5F1E7; }
+  .related-card .tag{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--gold-dim); letter-spacing:0.05em; }
+  .related-card h4{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:12px 0 8px; line-height:1.3; }
+  @media (max-width:640px){ .related-grid{ grid-template-columns:1fr; } }
+
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="/" class="logo" aria-label="KIXI AI — Home">
+    <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="19" stroke="#C9A24A" stroke-width="1"/>
+      <path d="M14 13 C14 13 11 16 11 20 C11 24 14 27 14 27" stroke="#C9A24A" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="18" y1="15" x2="18" y2="25" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="21.5" y1="12" x2="21.5" y2="28" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="25" y1="16" x2="25" y2="24" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="28.5" y1="17.5" x2="28.5" y2="22.5" stroke="#C9A24A" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-wordmark">KIXI <span>AI</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/infrastructure/" data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</a></li><li><a href="/solutions/" data-en="Solutions" data-pt="Soluções">Soluções</a></li><li><a href="/consulting/" data-en="Consulting" data-pt="Consultoria">Consultoria</a></li><li><a href="/insights/" class="current" data-en="Insights" data-pt="Insights">Insights</a></li><li><a href="/about/" data-en="About" data-pt="Sobre">Sobre</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/contact/" class="nav-cta" data-en="Contact" data-pt="Contacto">Contacto</a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span data-lang="pt">PT</span> / <span data-lang="en">EN</span>
+    </button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="/infrastructure/"><span>01</span><span data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</span></a><a href="/solutions/"><span>02</span><span data-en="Solutions" data-pt="Soluções">Soluções</span></a><a href="/consulting/"><span>03</span><span data-en="Consulting" data-pt="Consultoria">Consultoria</span></a><a href="/insights/" class="current"><span>04</span><span data-en="Insights" data-pt="Insights">Insights</span></a><a href="/about/"><span>05</span><span data-en="About" data-pt="Sobre">Sobre</span></a>
+  <a href="/contact/"><span>06</span><span data-en="Contact" data-pt="Contacto">Contacto</span></a>
+</div>
+
+<section class="body-section">
+  <div class="wrap body-grid">
+    <div class="article-hero">
+      <div class="meta-row">
+        <span class="tag">Insight #01 — AI &amp; Risk</span>
+        <span class="dot"></span>
+        <span data-en="6 min read" data-pt="6 min de leitura">6 min de leitura</span>
+        <span class="dot"></span>
+        <span>KIXI AI Executive Brief</span>
+      </div>
+      <h1 data-en="AI is not only a question of productivity. It is also a question of risk." data-pt="A IA não é apenas uma questão de produtividade. É também uma questão de risco.">A IA não é apenas uma questão de produtividade. É também uma questão de risco.</h1>
+      <p class="dek" data-en="Automating a process is the easy part. Governing what you automate is the part that decides the company's future." data-pt="Automatizar um processo é a parte fácil. Governar o que se automatiza é a parte que decide o futuro da empresa.">Automatizar um processo é a parte fácil. Governar o que se automatiza é a parte que decide o futuro da empresa.</p>
+    </div>
+
+    <p class="lede" data-en='Conversations over the past few weeks with professionals across strategic sectors — banking, oil &amp; gas, telecommunications — keep circling the same question: how should companies prepare for a reality where Artificial Intelligence sits inside nearly every process? <strong>The first answer is usually productivity. The deeper question is about risk.</strong>' data-pt='Nas últimas semanas, conversas com profissionais de sectores estratégicos — banca, petróleo e gás, telecomunicações — repetem a mesma pergunta: como devem as empresas preparar-se para uma realidade em que a Inteligência Artificial estará presente em praticamente todos os processos? <strong>A primeira resposta costuma ser produtividade. A pergunta mais profunda é sobre risco.</strong>'>Nas últimas semanas, conversas com profissionais de sectores estratégicos — banca, petróleo e gás, telecomunicações — repetem a mesma pergunta: como devem as empresas preparar-se para uma realidade em que a Inteligência Artificial estará presente em praticamente todos os processos? <strong>A primeira resposta costuma ser produtividade. A pergunta mais profunda é sobre risco.</strong></p>
+
+    <p class="p" data-en="Automate tasks. Build agents. Analyse data faster. Cut costs. It's natural for productivity to be the first territory any organisation explores when it thinks about AI — it's where the return is most immediate and easiest to measure." data-pt="Automatizar tarefas. Criar agentes. Analisar dados mais rapidamente. Reduzir custos. É natural que a produtividade seja o primeiro território que qualquer organização explora quando pensa em IA — é onde o retorno é mais imediato e mais fácil de medir.">Automatizar tarefas. Criar agentes. Analisar dados mais rapidamente. Reduzir custos. É natural que a produtividade seja o primeiro território que qualquer organização explora quando pensa em IA — é onde o retorno é mais imediato e mais fácil de medir.</p>
+
+    <p class="p" data-en="But as AI starts to take part in decision-making, in analysing information, and in executing processes, organisations will need to rethink their governance and control models. An agent that executes a task is also an agent that can make a mistake, escalate an error, or take a decision no one validated." data-pt="Mas à medida que a IA passa a participar na tomada de decisões, na análise de informação e na execução de processos, as organizações terão de repensar os seus modelos de governance e controlo. Um agente que executa uma tarefa também é um agente que pode errar, escalar um erro, ou tomar uma decisão que ninguém validou.">Mas à medida que a IA passa a participar na tomada de decisões, na análise de informação e na execução de processos, as organizações terão de repensar os seus modelos de governance e controlo. Um agente que executa uma tarefa também é um agente que pode errar, escalar um erro, ou tomar uma decisão que ninguém validou.</p>
+
+    <div class="eyebrow" data-en="Questions we can't ignore" data-pt="Questões que não podemos ignorar">Questões que não podemos ignorar</div>
+    <div class="capability-grid" id="riskGrid"></div>
+
+    <p class="p" data-en="AI will create enormous opportunity. But it will also create new categories of risk. The transformation AI brings will not be only technological — it will be a transformation of governance, risk, controls, people and processes." data-pt="A IA vai criar enormes oportunidades. Mas também vai criar novas categorias de risco. A transformação pela IA não será apenas tecnológica — será uma transformação de governance, risco, controlos, pessoas e processos.">A IA vai criar enormes oportunidades. Mas também vai criar novas categorias de risco. A transformação pela IA não será apenas tecnológica — será uma transformação de governance, risco, controlos, pessoas e processos.</p>
+
+    <blockquote data-en="The question is no longer just: will our companies adopt AI? The question is: are they ready to govern it?" data-pt="A pergunta já não é apenas: as nossas empresas vão adoptar IA? A pergunta é: estão preparadas para a governar?">A pergunta já não é apenas: as nossas empresas vão adoptar IA? A pergunta é: estão preparadas para a governar?</blockquote>
+
+    <p class="p" data-en="Companies that understand this early will be better prepared for the next decade. Africa is at a unique moment: leading the AI transformation, rather than only absorbing it, is what secures a future that is sustainable, competitive and inclusive." data-pt="As empresas que compreenderem isto cedo estarão melhor preparadas para a próxima década. África está num momento único: liderar a transformação pela IA — em vez de apenas a absorver — é o que garante um futuro sustentável, competitivo e inclusivo.">As empresas que compreenderem isto cedo estarão melhor preparadas para a próxima década. África está num momento único: liderar a transformação pela IA — em vez de apenas a absorver — é o que garante um futuro sustentável, competitivo e inclusivo.</p>
+
+    <div class="close-note">
+      <div class="eyebrow" data-en="Where this fits" data-pt="Onde isto se encaixa">Onde isto se encaixa</div>
+      <p data-en='This insight is part of KIXI&#39;s <strong>AI Consulting</strong> track — Strategy, Governance, Risk and Productivity for organisations already running AI, or preparing to.' data-pt='Este insight faz parte da vertical <strong>AI Consulting</strong> da KIXI — Strategy, Governance, Risk e Productivity para organizações que já operam com IA, ou se preparam para isso.'>Este insight faz parte da vertical <strong>AI Consulting</strong> da KIXI — Strategy, Governance, Risk e Productivity para organizações que já operam com IA, ou se preparam para isso.</p>
+      <a href="/consulting/" class="btn-primary" data-en="Explore AI Consulting at KIXI →" data-pt="Explorar AI Consulting na KIXI →">Explorar AI Consulting na KIXI →</a>
+    </div>
+  </div>
+</section>
+
+<section class="related">
+  <div class="wrap">
+    <h3 data-en="Related Insights" data-pt="Insights Relacionados">Insights Relacionados</h3>
+    <div class="related-grid">
+      <a href="/insights/primeiro-colaborador-digital/" class="related-card">
+        <span class="tag">Insight #02.2 — AI Agents</span>
+        <h4 data-en="The first digital employee may never receive a salary." data-pt="O primeiro colaborador digital poderá nunca receber salário.">O primeiro colaborador digital poderá nunca receber salário.</h4>
+      </a>
+      <a href="/insights/" class="related-card">
+        <span class="tag">Insight #03.1 — AI Governance</span>
+        <h4 data-en="AI can already make decisions. Who is responsible for them?" data-pt="A IA já pode tomar decisões. Quem é responsável por elas?">A IA já pode tomar decisões. Quem é responsável por elas?</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/" class="logo">
+        <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="19" stroke="#C9A24A" stroke-width="1"/>
+      <path d="M14 13 C14 13 11 16 11 20 C11 24 14 27 14 27" stroke="#C9A24A" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="18" y1="15" x2="18" y2="25" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="21.5" y1="12" x2="21.5" y2="28" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="25" y1="16" x2="25" y2="24" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="28.5" y1="17.5" x2="28.5" y2="22.5" stroke="#C9A24A" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+        <div class="logo-wordmark">KIXI <span>AI</span></div>
+      </a>
+      <div class="footer-tagline" data-en="Building Africa's Intelligence Infrastructure." data-pt="A Construir a Infraestrutura de Inteligência de África.">A Construir a Infraestrutura de Inteligência de África.</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <span class="head" data-en="Company" data-pt="Empresa">Empresa</span>
+        <a href="/infrastructure/" data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</a>
+        <a href="/solutions/" data-en="Solutions" data-pt="Soluções">Soluções</a>
+        <a href="/consulting/" data-en="Consulting" data-pt="Consultoria">Consultoria</a>
+      </div>
+      <div class="footer-col">
+        <span class="head" data-en="Insights" data-pt="Insights">Insights</span>
+        <a href="/insights/" data-en="Executive Briefs" data-pt="Executive Briefs">Executive Briefs</a>
+        <a href="/about/" data-en="About" data-pt="Sobre">Sobre</a>
+        <a href="mailto:kixiai.tech@gmail.com" data-en="Contact" data-pt="Contacto">Contacto</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 KIXI AI — Angola</span>
+    <span data-en="Kimbundu · Umbundu · Kikongo — and counting" data-pt="Kimbundu · Umbundu · Kikongo — e a continuar">Kimbundu · Umbundu · Kikongo — e a continuar</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const icons = {
+    eye: '<path d="M2 12c2.5-4.5 6-7 10-7s7.5 2.5 10 7c-2.5 4.5-6 7-10 7S4.5 16.5 2 12z" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>',
+    check: '<circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    lock: '<rect x="6" y="11" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M8.5 11V8a3.5 3.5 0 0 1 7 0v3" stroke="currentColor" stroke-width="1.4"/>',
+    refresh: '<path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M17 4v4h-4M7 20v-4h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    alert: '<path d="M12 4 21 19H3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 10v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="12" cy="16.5" r="0.9" fill="currentColor"/>',
+    usercheck: '<circle cx="10" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M4 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.4"/><path d="M16 12l2 2 3-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  };
+  const data = {
+    pt: [
+      { t:"Supervisão", d:"Quem supervisiona os agentes? Cada decisão automatizada precisa de um responsável humano identificável.", icon:'eye' },
+      { t:"Validação", d:"Como validamos decisões produzidas por IA? Antes de um resultado se tornar acção, alguém tem de o poder rever.", icon:'check' },
+      { t:"Protecção de Dados", d:"Como protegemos dados sensíveis? Modelos que acedem a informação crítica exigem controlo de acesso rigoroso.", icon:'lock' },
+      { t:"Modelos em Evolução", d:"Como gerimos modelos que evoluem? Um sistema que aprende hoje pode comportar-se de forma diferente amanhã.", icon:'refresh' },
+      { t:"Risco Sistémico", d:"Como evitamos que um erro se transforme em crise? Um erro automatizado pode escalar mais depressa do que um erro humano.", icon:'alert' },
+      { t:"Responsabilidade", d:"Quem responde quando algo corre mal? A responsabilidade final continua a ser humana — mesmo quando a decisão não foi.", icon:'usercheck' },
+    ],
+    en: [
+      { t:"Oversight", d:"Who supervises the agents? Every automated decision needs an identifiable human owner.", icon:'eye' },
+      { t:"Validation", d:"How do we validate AI-produced decisions? Before a result becomes an action, someone has to be able to review it.", icon:'check' },
+      { t:"Data Protection", d:"How do we protect sensitive data? Models that access critical information demand rigorous access control.", icon:'lock' },
+      { t:"Evolving Models", d:"How do we manage models that evolve? A system that learns today may behave differently tomorrow.", icon:'refresh' },
+      { t:"Systemic Risk", d:"How do we stop one error becoming a crisis? An automated error can escalate faster than a human one.", icon:'alert' },
+      { t:"Accountability", d:"Who answers when something goes wrong? Final responsibility stays human — even when the decision wasn't.", icon:'usercheck' },
+    ],
+  };
+  const grid = document.getElementById('riskGrid');
+  function render(lang){
+    grid.innerHTML = '';
+    data[lang].forEach(cap => {
+      const div = document.createElement('div'); div.className='cap-card';
+      div.innerHTML = `<svg class="cap-icon" viewBox="0 0 24 24" fill="none">${icons[cap.icon]}</svg><div><h4>${cap.t}</h4><p>${cap.d}</p></div>`;
+      grid.appendChild(div);
+    });
+  }
+  window.onLangChange = function(lang){ render(lang); };
+  render('pt');
+})();
+</script>
+
+
+<script>
+  // Simple static-text i18n: elements with data-en/data-pt swap on toggle.
+  const state = { lang: localStorage.getItem('kixiLang') || 'pt' };
+  function applyStaticLang(lang){
+    document.querySelectorAll('[data-en][data-pt]').forEach(el => {
+      el.innerHTML = lang === 'pt' ? el.dataset.pt : el.dataset.en;
+    });
+    document.querySelectorAll('#langToggle span, .lang-toggle span').forEach(s => s.classList.toggle('on', s.dataset.lang === lang));
+    document.documentElement.lang = lang;
+    if (window.onLangChange) window.onLangChange(lang);
+    state.lang = lang;
+localStorage.setItem('kixiLang', lang);
+  }
+  document.getElementById('langToggle').addEventListener('click', () => applyStaticLang(state.lang === 'pt' ? 'en' : 'pt'));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  applyStaticLang(state.lang);
+</script>
+
+</body>
+</html>
