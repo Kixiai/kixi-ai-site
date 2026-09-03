@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="hosting-provider" content="Netlify">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIXI AI — Um agente pode ser poderoso. Uma rede de agentes pode transformar um processo inteiro.</title>
+<meta name="google-site-verification" content="QQ0wSvUH0h9zwqFZVyT1Ly6pN6fdZt5QFZwgn7w7Awk" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#080D16">
+<meta name="description" content="O valor não está no agente. Está no processo que ele consegue transformar. Um Executive Brief da KIXI AI sobre redes de agentes de IA.">
+<link rel="canonical" href="https://kixiai.netlify.app/insights/rede-de-agentes/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KIXI AI">
+<meta property="og:title" content="KIXI AI — Um agente pode ser poderoso. Uma rede de agentes pode transformar um processo inteiro.">
+<meta property="og:description" content="O valor não está no agente. Está no processo que ele consegue transformar. Um Executive Brief da KIXI AI sobre redes de agentes de IA.">
+<meta property="og:image" content="https://kixiai.netlify.app/og-image-pt.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kixiai.netlify.app/insights/rede-de-agentes/">
+<meta property="og:locale" content="pt_PT">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KIXI AI — Um agente pode ser poderoso. Uma rede de agentes pode transformar um processo inteiro.">
+<meta name="twitter:description" content="O valor não está no agente. Está no processo que ele consegue transformar. Um Executive Brief da KIXI AI sobre redes de agentes de IA.">
+<meta name="twitter:image" content="https://kixiai.netlify.app/og-image-pt.png">
+<style>
+
+  :root{
+    --navy-950:#080D16; --navy-900:#0B1420; --navy-800:#131F32; --navy-750:#182640;
+    --line:#28374F; --line-soft:#1B2740;
+    --paper:#F5F1E7; --paper-dim:#EAE4D4;
+    --ink-on-paper:#1C1A15; --ink-on-paper-dim:#6B6355;
+    --ink:#E9E6DC; --ink-dim:#94A0B4;
+    --gold:#C9A24A; --gold-light:#E8CD84; --gold-dim:#7A6631;
+    --black:#050709;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--navy-950); color:var(--ink); font-family:'IBM Plex Sans', sans-serif; overflow-x:hidden; }
+  a{ color:inherit; }
+  ::selection{ background:var(--gold); color:var(--navy-950); }
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+  .wrap{ max-width:1240px; margin:0 auto; padding-left:56px; padding-right:56px; }
+  @media (max-width:760px){ .wrap{ padding-left:24px; padding-right:24px; } }
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; gap:12px; margin-bottom:22px;
+  }
+  .eyebrow::before{ content:''; width:24px; height:1px; background:var(--gold); }
+  .eyebrow.on-paper{ color:var(--gold-dim); }
+  .eyebrow.on-paper::before{ background:var(--gold-dim); }
+
+  /* ---------- NAV ---------- */
+  #nav{
+    position:sticky; top:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 56px; background:rgba(8,13,22,0.9); backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .logo{ display:flex; align-items:center; gap:11px; text-decoration:none; transition:opacity .2s ease; }
+  .logo:hover{ opacity:0.8; }
+  .logo-mark{ width:28px; height:28px; flex-shrink:0; }
+  .logo-wordmark{ font-family:'Fraunces', serif; font-weight:600; font-size:16.5px; color:var(--paper); }
+  .logo-wordmark span{ color:var(--gold); font-style:italic; font-weight:500; }
+  .nav-links{ display:flex; gap:30px; list-style:none; font-family:'IBM Plex Mono', monospace; font-size:11.5px;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-dim); }
+  .nav-links a{ text-decoration:none; cursor:pointer; transition:color .25s ease; position:relative; padding-bottom:4px;}
+  .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .25s ease; }
+  .nav-links a:hover{ color:var(--paper); }
+  .nav-links a.current{ color:var(--gold); }
+  .nav-links a.current::after{ width:100%; }
+  .nav-right{ display:flex; align-items:center; gap:16px; }
+  .lang-toggle{ border:1px solid var(--line); border-radius:20px; padding:6px 14px; background:none; cursor:pointer;
+    color:var(--ink-dim); font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.05em;
+    display:flex; align-items:center; gap:6px; }
+  .lang-toggle span{ opacity:0.5; transition:all .2s ease; }
+  .lang-toggle span.on{ color:var(--gold); opacity:1; }
+  .nav-cta{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:13px; color:var(--navy-950);
+    background:linear-gradient(100deg, var(--gold-light), var(--gold)); padding:9px 18px; border-radius:20px;
+    text-decoration:none; transition:transform .2s ease; }
+  .nav-cta:hover{ transform:translateY(-1px); }
+  @media (max-width:560px){ .nav-cta{ display:none; } }
+  .menu-btn{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
+  .menu-btn span{ width:20px; height:1px; background:var(--paper); display:block; }
+  @media (max-width:920px){ #nav{ padding:18px 24px; } .nav-links{ display:none; } .menu-btn{ display:flex; } }
+
+  #mobile-menu{ position:fixed; inset:0; z-index:99; background:var(--navy-950); display:flex; flex-direction:column;
+    justify-content:center; gap:26px; padding:56px; transform:translateY(-100%); transition:transform .45s cubic-bezier(.22,.61,.36,1); }
+  #mobile-menu.open{ transform:translateY(0); }
+  #mobile-menu a{ font-family:'Fraunces', serif; font-size:28px; color:var(--paper); text-decoration:none; }
+  #mobile-menu a.current{ color:var(--gold); }
+  #mobile-menu a span{ color:var(--gold-dim); font-family:'IBM Plex Mono', monospace; font-size:12px; margin-right:12px; }
+
+  .btn-primary{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:14px; color:var(--navy-950);
+    background:linear-gradient(100deg, var(--gold-light), var(--gold)); padding:14px 28px; border-radius:2px;
+    text-decoration:none; display:inline-block; transition: transform .25s ease, box-shadow .25s ease; border:none; cursor:pointer; }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,162,74,0.25); }
+  .btn-secondary{ font-family:'IBM Plex Sans', sans-serif; font-weight:500; font-size:14px; color:var(--paper);
+    padding:14px 4px; text-decoration:none; border-bottom:1px solid var(--line); display:inline-flex; align-items:center; gap:8px;
+    transition:border-color .25s ease, color .25s ease; }
+  .btn-secondary:hover{ border-color:var(--gold); color:var(--gold-light); }
+  .btn-secondary.on-paper{ color:var(--ink-on-paper); border-color:#DCD5C3; }
+  .btn-secondary.on-paper:hover{ border-color:var(--gold-dim); color:var(--gold-dim); }
+
+  .chip{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--gold-light);
+    border:1px solid var(--line); border-radius:20px; padding:6px 12px; display:inline-block; }
+  .chip.on-paper{ color:var(--gold-dim); border-color:#DCD5C3; }
+
+  /* ---------- PAGE HERO (subpages) ---------- */
+  .page-hero{ padding:80px 56px 70px; border-bottom:1px solid var(--line-soft); position:relative; overflow:hidden;
+    background: radial-gradient(ellipse 900px 500px at 90% 0%, rgba(201,162,74,0.07), transparent 60%), linear-gradient(180deg, var(--navy-950), var(--navy-900)); }
+  .page-hero .kicker{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; color:var(--gold-dim); margin-bottom:8px; }
+  .page-hero h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(34px,5vw,58px); line-height:1.12; color:var(--paper); max-width:16ch; }
+  .page-hero h1 em{ font-style:italic; font-weight:500; background:linear-gradient(100deg, var(--gold-light), var(--gold) 60%);
+    -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .page-hero .sub{ margin-top:22px; font-size:16.5px; line-height:1.7; color:var(--ink-dim); max-width:50ch; }
+  @media (max-width:700px){ .page-hero{ padding:56px 24px 44px; } }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--navy-950); padding:56px; border-top:1px solid var(--line-soft); }
+  .footer-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:40px; flex-wrap:wrap; max-width:1240px; margin:0 auto; }
+  .footer-tagline{ font-family:'Fraunces', serif; font-style:italic; font-size:16px; color:var(--ink-dim); max-width:32ch; margin-top:14px; }
+  .footer-links{ display:flex; gap:50px; flex-wrap:wrap; }
+  .footer-col{ display:flex; flex-direction:column; gap:11px; }
+  .footer-col span.head{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:4px; }
+  .footer-col a{ font-size:13.5px; color:var(--ink-dim); text-decoration:none; }
+  .footer-col a:hover{ color:var(--paper); }
+  .footer-bottom{ max-width:1240px; margin:50px auto 0; padding-top:26px; border-top:1px solid var(--line-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    color:var(--ink-dim); text-transform:uppercase; letter-spacing:0.06em; }
+
+  @keyframes fadeUp{ from{ opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .fade-up{ animation: fadeUp .7s ease forwards; }
+
+  @media (prefers-reduced-motion: reduce){ *{ animation-duration:0.01ms !important; animation-iteration-count:1 !important; } html{ scroll-behavior:auto; } }
+
+
+  section.body-section{ background:var(--paper); color:var(--ink-on-paper); padding:60px 56px 0; }
+  .meta-row{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.05em;
+    color:var(--ink-on-paper-dim); text-transform:uppercase; margin-bottom:28px; }
+  .meta-row .tag{ color:var(--gold-dim); font-weight:500; }
+  .meta-row .dot{ width:3px; height:3px; border-radius:50%; background:var(--ink-on-paper-dim); }
+  .article-hero h1{ font-family:'Fraunces', serif; font-weight:500; font-size:clamp(32px,5vw,54px); line-height:1.15; max-width:18ch; color:var(--ink-on-paper); }
+  .article-hero .dek{ margin-top:24px; font-family:'Fraunces', serif; font-style:italic; font-weight:400; font-size:clamp(18px,2vw,22px); line-height:1.5; color:var(--gold-dim); max-width:38ch; }
+  .article-hero{ padding-bottom:56px; border-bottom:1px solid #DCD5C3; margin-bottom:60px; }
+
+  .body-grid{ display:grid; grid-template-columns: 1fr 640px 1fr; }
+  .body-grid > *{ grid-column:2; }
+  @media (max-width:1000px){ .body-grid{ grid-template-columns:1fr; } .body-grid > *{ grid-column:1; } }
+  .lede{ font-size:19px; line-height:1.75; color:var(--ink-on-paper); margin-bottom:36px; }
+  .p{ font-size:16.5px; line-height:1.85; color:#3A362E; margin-bottom:26px; }
+  .capability-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#DCD5C3; border:1px solid #DCD5C3; margin: 44px 0 48px; }
+  .cap-card{ background:var(--paper); padding:26px 24px; display:flex; gap:16px; align-items:flex-start; }
+  .cap-icon{ width:22px; height:22px; color:var(--gold-dim); flex-shrink:0; margin-top:2px; }
+  .cap-card h4{ font-family:'Fraunces', serif; font-weight:500; font-size:16px; margin-bottom:4px; }
+  .cap-card p{ font-size:13px; color:var(--ink-on-paper-dim); line-height:1.5; }
+  @media (max-width:640px){ .capability-grid{ grid-template-columns:1fr; } }
+  blockquote{ margin: 48px 0; padding: 6px 0 6px 28px; border-left:2px solid var(--gold); font-family:'Fraunces', serif; font-style:italic; font-weight:500;
+    font-size:clamp(21px,2.6vw,27px); line-height:1.5; color:var(--ink-on-paper); }
+  .close-note{ background:var(--navy-950); color:var(--ink); padding:44px 40px; margin:56px 0 90px; border-radius:2px; }
+  .close-note .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .close-note .eyebrow::before{ content:''; width:20px; height:1px; background:var(--gold); }
+  .close-note p{ font-size:15.5px; line-height:1.7; color:var(--ink-dim); margin-bottom:20px; }
+  .close-note strong{ color:var(--paper); }
+
+  .related{ background:var(--paper-dim); padding:70px 56px 100px; }
+  .related h3{ font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-dim); margin-bottom:30px; }
+  .related-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#DCD5C3; border:1px solid #DCD5C3; max-width:1128px; margin:0 auto; }
+  .related-card{ background:var(--paper-dim); padding:30px 26px; text-decoration:none; color:inherit; display:flex; flex-direction:column; transition:background .25s ease; }
+  .related-card:hover{ background:#F5F1E7; }
+  .related-card .tag{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--gold-dim); letter-spacing:0.05em; }
+  .related-card h4{ font-family:'Fraunces', serif; font-weight:500; font-size:19px; margin:12px 0 8px; line-height:1.3; }
+  @media (max-width:640px){ .related-grid{ grid-template-columns:1fr; } }
+
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="/" class="logo" aria-label="KIXI AI — Home">
+    <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="19" stroke="#C9A24A" stroke-width="1"/>
+      <path d="M14 13 C14 13 11 16 11 20 C11 24 14 27 14 27" stroke="#C9A24A" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="18" y1="15" x2="18" y2="25" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="21.5" y1="12" x2="21.5" y2="28" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="25" y1="16" x2="25" y2="24" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="28.5" y1="17.5" x2="28.5" y2="22.5" stroke="#C9A24A" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+    <div class="logo-wordmark">KIXI <span>AI</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/infrastructure/" data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</a></li><li><a href="/solutions/" data-en="Solutions" data-pt="Soluções">Soluções</a></li><li><a href="/consulting/" data-en="Consulting" data-pt="Consultoria">Consultoria</a></li><li><a href="/insights/" class="current" data-en="Insights" data-pt="Insights">Insights</a></li><li><a href="/about/" data-en="About" data-pt="Sobre">Sobre</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="/contact/" class="nav-cta" data-en="Contact" data-pt="Contacto">Contacto</a>
+    <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+      <span data-lang="pt">PT</span> / <span data-lang="en">EN</span>
+    </button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="mobile-menu">
+  <a href="/infrastructure/"><span>01</span><span data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</span></a><a href="/solutions/"><span>02</span><span data-en="Solutions" data-pt="Soluções">Soluções</span></a><a href="/consulting/"><span>03</span><span data-en="Consulting" data-pt="Consultoria">Consultoria</span></a><a href="/insights/" class="current"><span>04</span><span data-en="Insights" data-pt="Insights">Insights</span></a><a href="/about/"><span>05</span><span data-en="About" data-pt="Sobre">Sobre</span></a>
+  <a href="/contact/"><span>06</span><span data-en="Contact" data-pt="Contacto">Contacto</span></a>
+</div>
+
+<section class="body-section">
+  <div class="wrap body-grid">
+    <div class="article-hero">
+      <div class="meta-row">
+        <span class="tag">Insight #02.3 — AI Agents</span>
+        <span class="dot"></span>
+        <span data-en="5 min read" data-pt="5 min de leitura">5 min de leitura</span>
+        <span class="dot"></span>
+        <span>KIXI AI Executive Brief</span>
+      </div>
+      <h1 data-en="A single agent can be powerful. A network of agents can transform an entire process." data-pt="Um agente pode ser poderoso. Mas uma rede de agentes pode transformar um processo inteiro.">Um agente pode ser poderoso. Mas uma rede de agentes pode transformar um processo inteiro.</h1>
+      <p class="dek" data-en="The future of enterprise AI won't be defined by individual agents. It will be defined by how they collaborate, communicate, and coordinate decisions." data-pt="O futuro da IA empresarial não será definido apenas por agentes individuais. Será definido pela forma como eles colaboram, comunicam e coordenam decisões.">O futuro da IA empresarial não será definido apenas por agentes individuais. Será definido pela forma como eles colaboram, comunicam e coordenam decisões.</p>
+    </div>
+
+    <p class="lede" data-en='A single agent that executes one task well is useful. <strong>But the real shift happens when several specialized agents work together, coordinated by one that plans and delegates — the same way a team works, not just an individual.</strong>' data-pt='Um agente único que executa bem uma tarefa é útil. <strong>Mas a verdadeira mudança acontece quando vários agentes especializados trabalham em conjunto, coordenados por um que planeia e delega — tal como uma equipa trabalha, não apenas um indivíduo.</strong>'>Um agente único que executa bem uma tarefa é útil. <strong>Mas a verdadeira mudança acontece quando vários agentes especializados trabalham em conjunto, coordenados por um que planeia e delega — tal como uma equipa trabalha, não apenas um indivíduo.</strong></p>
+
+    <p class="p" data-en="This is the orchestrator model: one agent receives the objective and breaks it down, an orchestrator delegates each part to the specialist best suited for it — Finance, Research, Risk, Data, Legal, and others — each with its own tools and context, and their outputs are synthesised into a single result." data-pt="É o modelo do orquestrador: um agente recebe o objectivo e decompõe-no, um orquestrador delega cada parte ao especialista mais indicado — Finanças, Investigação, Risco, Dados, Jurídico, e outros — cada um com as suas próprias ferramentas e contexto, e os resultados são sintetizados num único resultado final.">É o modelo do orquestrador: um agente recebe o objectivo e decompõe-no, um orquestrador delega cada parte ao especialista mais indicado — Finanças, Investigação, Risco, Dados, Jurídico, e outros — cada um com as suas próprias ferramentas e contexto, e os resultados são sintetizados num único resultado final.</p>
+
+    <p class="p" data-en='Picture this applied to a risk management process: a new risk is identified, a Research agent gathers external information, a Data agent analyses internal records, a Compliance agent checks it against policy and requirements, a Risk agent evaluates exposure and impact, and a Strategy agent proposes a response. <strong>The decision still belongs to a person</strong> — the preparatory work is what agents can carry out.' data-pt='Imagina isto aplicado a um processo de gestão de risco: um novo risco é identificado, um agente de Investigação recolhe informação externa, um agente de Dados analisa registos internos, um agente de Compliance verifica políticas e requisitos, um agente de Risco avalia exposição e impacto, e um agente de Estratégia propõe uma resposta. <strong>A decisão continua a pertencer a uma pessoa</strong> — o trabalho preparatório é o que os agentes podem executar.'>Imagina isto aplicado a um processo de gestão de risco: um novo risco é identificado, um agente de Investigação recolhe informação externa, um agente de Dados analisa registos internos, um agente de Compliance verifica políticas e requisitos, um agente de Risco avalia exposição e impacto, e um agente de Estratégia propõe uma resposta. <strong>A decisão continua a pertencer a uma pessoa</strong> — o trabalho preparatório é o que os agentes podem executar.</p>
+
+    <div class="eyebrow" data-en="What actually changes" data-pt="O que realmente muda">O que realmente muda</div>
+    <div class="capability-grid" id="networkGrid"></div>
+
+    <blockquote data-en="The value isn't in the agent. It's in the process it can transform." data-pt="O valor não está no agente. Está no processo que ele consegue transformar.">O valor não está no agente. Está no processo que ele consegue transformar.</blockquote>
+
+    <p class="p" data-en="What if the entire process could run while your team focused only on decisions? The opportunity isn't only to automate tasks. It's to redesign how work flows through the organisation." data-pt="E se o processo inteiro pudesse trabalhar enquanto a sua equipa se concentra apenas nas decisões? A oportunidade não é apenas automatizar tarefas. É redesenhar a forma como o trabalho flui dentro da organização.">E se o processo inteiro pudesse trabalhar enquanto a sua equipa se concentra apenas nas decisões? A oportunidade não é apenas automatizar tarefas. É redesenhar a forma como o trabalho flui dentro da organização.</p>
+
+    <div class="close-note">
+      <div class="eyebrow" data-en="Where this fits" data-pt="Onde isto se encaixa">Onde isto se encaixa</div>
+      <p data-en='This insight is part of KIXI&#39;s <strong>AI Solutions</strong> track — from a single specialized agent to a fully coordinated digital workforce.' data-pt='Este insight faz parte da vertical <strong>AI Solutions</strong> da KIXI — de um único agente especializado a uma força de trabalho digital totalmente coordenada.'>Este insight faz parte da vertical <strong>AI Solutions</strong> da KIXI — de um único agente especializado a uma força de trabalho digital totalmente coordenada.</p>
+      <a href="/solutions/" class="btn-primary" data-en="Explore AI Solutions at KIXI →" data-pt="Explorar AI Solutions na KIXI →">Explorar AI Solutions na KIXI →</a>
+    </div>
+  </div>
+</section>
+
+<section class="related">
+  <div class="wrap">
+    <h3 data-en="Related Insights" data-pt="Insights Relacionados">Insights Relacionados</h3>
+    <div class="related-grid">
+      <a href="/insights/colaboradores-digitais/" class="related-card">
+        <span class="tag">Insight #02.1 — AI Agents</span>
+        <h4 data-en="The next generation of companies will have hundreds of digital employees." data-pt="A próxima geração de empresas terá centenas de colaboradores digitais.">A próxima geração de empresas terá centenas de colaboradores digitais.</h4>
+      </a>
+      <a href="/insights/primeiro-colaborador-digital/" class="related-card">
+        <span class="tag">Insight #02.2 — AI Agents</span>
+        <h4 data-en="The first digital employee may never receive a salary." data-pt="O primeiro colaborador digital poderá nunca receber salário.">O primeiro colaborador digital poderá nunca receber salário.</h4>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="/" class="logo">
+        <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="20" cy="20" r="19" stroke="#C9A24A" stroke-width="1"/>
+      <path d="M14 13 C14 13 11 16 11 20 C11 24 14 27 14 27" stroke="#C9A24A" stroke-width="1.3" stroke-linecap="round"/>
+      <line x1="18" y1="15" x2="18" y2="25" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="21.5" y1="12" x2="21.5" y2="28" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="25" y1="16" x2="25" y2="24" stroke="#E8CD84" stroke-width="1.4" stroke-linecap="round"/>
+      <line x1="28.5" y1="17.5" x2="28.5" y2="22.5" stroke="#C9A24A" stroke-width="1.4" stroke-linecap="round"/>
+    </svg>
+        <div class="logo-wordmark">KIXI <span>AI</span></div>
+      </a>
+      <div class="footer-tagline" data-en="Building Africa's Intelligence Infrastructure." data-pt="A Construir a Infraestrutura de Inteligência de África.">A Construir a Infraestrutura de Inteligência de África.</div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <span class="head" data-en="Company" data-pt="Empresa">Empresa</span>
+        <a href="/infrastructure/" data-en="Infrastructure" data-pt="Infraestrutura">Infraestrutura</a>
+        <a href="/solutions/" data-en="Solutions" data-pt="Soluções">Soluções</a>
+        <a href="/consulting/" data-en="Consulting" data-pt="Consultoria">Consultoria</a>
+      </div>
+      <div class="footer-col">
+        <span class="head" data-en="Insights" data-pt="Insights">Insights</span>
+        <a href="/insights/" data-en="Executive Briefs" data-pt="Executive Briefs">Executive Briefs</a>
+        <a href="/about/" data-en="About" data-pt="Sobre">Sobre</a>
+        <a href="mailto:kixiai.tech@gmail.com" data-en="Contact" data-pt="Contacto">Contacto</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 KIXI AI — Angola</span>
+    <span data-en="Kimbundu · Umbundu · Kikongo — and counting" data-pt="Kimbundu · Umbundu · Kikongo — e a continuar">Kimbundu · Umbundu · Kikongo — e a continuar</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const icons = {
+    network: '<circle cx="12" cy="6" r="2.2" stroke="currentColor" stroke-width="1.4"/><circle cx="5" cy="18" r="2.2" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.4"/><circle cx="19" cy="18" r="2.2" stroke="currentColor" stroke-width="1.4"/><path d="M12 8.2V13M5 15.8 10 13M19 15.8 14 13" stroke="currentColor" stroke-width="1.3"/>',
+    target: '<circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="1" fill="currentColor"/>',
+    usercheck: '<circle cx="10" cy="8" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M4 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.4"/><path d="M16 12l2 2 3-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+    refresh: '<path d="M4 12a8 8 0 0 1 13.6-5.7M20 12a8 8 0 0 1-13.6 5.7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M17 4v4h-4M7 20v-4h4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  };
+  const data = {
+    pt: [
+      { t:"Orquestração", d:"Agentes coordenados por um objectivo comum — não ferramentas isoladas a trabalhar em paralelo.", icon:'network' },
+      { t:"Especialização", d:"Cada agente estreito no seu foco, com as suas próprias ferramentas, contexto e responsabilidade.", icon:'target' },
+      { t:"Decisão humana", d:"O trabalho preparatório é executado por agentes. O julgamento final continua a pertencer a uma pessoa.", icon:'usercheck' },
+      { t:"Fluxo redesenhado", d:"Não é automatizar tarefas isoladas. É repensar como o trabalho flui de ponta a ponta.", icon:'refresh' },
+    ],
+    en: [
+      { t:"Orchestration", d:"Agents coordinated around one shared objective — not isolated tools working in parallel.", icon:'network' },
+      { t:"Specialisation", d:"Each agent narrow in its focus, with its own tools, context, and accountability.", icon:'target' },
+      { t:"Human decision", d:"The preparatory work is carried out by agents. Final judgement still belongs to a person.", icon:'usercheck' },
+      { t:"Redesigned flow", d:"Not automating isolated tasks. Rethinking how work flows end to end.", icon:'refresh' },
+    ],
+  };
+  const grid = document.getElementById('networkGrid');
+  function render(lang){
+    grid.innerHTML = '';
+    data[lang].forEach(cap => {
+      const div = document.createElement('div'); div.className='cap-card';
+      div.innerHTML = `<svg class="cap-icon" viewBox="0 0 24 24" fill="none">${icons[cap.icon]}</svg><div><h4>${cap.t}</h4><p>${cap.d}</p></div>`;
+      grid.appendChild(div);
+    });
+  }
+  window.onLangChange = function(lang){ render(lang); };
+  render('pt');
+})();
+</script>
+
+
+<script>
+  // Simple static-text i18n: elements with data-en/data-pt swap on toggle.
+  const state = { lang: localStorage.getItem('kixiLang') || 'pt' };
+  function applyStaticLang(lang){
+    document.querySelectorAll('[data-en][data-pt]').forEach(el => {
+      el.innerHTML = lang === 'pt' ? el.dataset.pt : el.dataset.en;
+    });
+    document.querySelectorAll('#langToggle span, .lang-toggle span').forEach(s => s.classList.toggle('on', s.dataset.lang === lang));
+    document.documentElement.lang = lang;
+    if (window.onLangChange) window.onLangChange(lang);
+    state.lang = lang;
+localStorage.setItem('kixiLang', lang);
+  }
+  document.getElementById('langToggle').addEventListener('click', () => applyStaticLang(state.lang === 'pt' ? 'en' : 'pt'));
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  }
+  applyStaticLang(state.lang);
+</script>
+
+</body>
+</html>
